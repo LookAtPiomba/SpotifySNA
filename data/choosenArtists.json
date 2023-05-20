@@ -1,38 +1,114 @@
-{
-  "Finesse": "3GWuJyC9r6Ug0F6jeLzTpY",
-  "Lazza": "0jdNdfi4vAuVi7a6cPDFBM",
-  "Geolier": "27LlKWxS3KXW7RRAxN5S8s",
-  "Rhove": "44DWomjW1oDuxIoBIRpmQ4",
-  "BLANCO": "1MRiIeZbc0cRuxOafDUCtH",
-  "Annalisa": "0EqkKYDK9EkKY5N7zU3FPv",
-  "AriBeatz": "6cNWiizYLCClZdnIvqU968",
-  "Tananai": "35V1WomiedCJeGfupcPm7s",
-  "Marco Mengoni": "3xGlLcG9CUrs5MvFkSLOS5",
-  "Bizarrap": "716NhGYqD1jl2wI1Qkgq36",
-  "Shiva": "2K5nCggbhSZ00YCYP5qkZS",
-  "thasup": "19i93sA0D7yS9dYoVNBqAA",
-  "Rocco Hunt": "0L1f9i3L3fkMNENljDOsjG",
-  "Mr.Rain": "59MLbXG0jLVwJup3KAd6m1",
-  "Bresh": "7FeObngbQ0GY3SojNwKdKn",
-  "Tony Effe": "6CKch2otN4SPznHf9ms5JF",
-  "Guè": "7F2utINZ6tSokSiZTQBE27",
-  "Medy": "3lbFUmlaNMa9ZVSabLlkhn",
-  "Rose Villain": "2aya6KuqjXEhHBqYKsTPLs",
-  "Madame": "1vgQksyJ0IVz8y9XerEOy3",
-  "David Kushner": "33NVpKoXjItPwUJTMZIOiY",
-  "VillaBanks": "3ASAxVN1hNoYfoMcIkzZWL",
-  "Loreen": "49aaHxvAJ0tCh0F15OnwIl",
-  "Miley Cyrus": "5YGY8feqx7naU7z4HrwZM6",
-  "Angelina Mango": "1A6HBLulvBFzNtlMb7b08f",
-  "Diss Gacha": "4TKF8KSK6bgHgszFxu5xzu",
-  "Pinguini Tattici Nucleari": "6RdcIWVKYYzNzjQRd3oyHS",
-  "ROSALÍA": "7ltDVBr6mKbRvohxheJ9h1",
-  "Capo Plaza": "5SulO4l40qDuV9zUGLZx7n",
-  "Noizy": "2SabhGDiBSyaM6QSuBUVqB",
-  "Shablo": "6hkKbkZGvAXuvle2FhCnxy",
-  "Alessandra": "35HMF6Y8dSzNfeJs3X65fw",
-  "Elodie": "7GgpsUpkj3olseoaTY7TEY",
-  "Marracash": "5AZuEF0feCXMkUCwQiQlW7",
-  "Don Pero": "2KLafS2cc489GVGuYm5aE2",
-  "David Guetta": "1Cs0zKBU1kc0i8ypK3B9ai"
-}
+[
+  {
+    "name": "Emis Killa",
+    "id": "6FtwCmLY6L1sqvjaQ2lV6G"
+  },
+  {
+    "name": "Rhove",
+    "id": "44DWomjW1oDuxIoBIRpmQ4"
+  },
+  {
+    "name": "Finesse",
+    "id": "3GWuJyC9r6Ug0F6jeLzTpY"
+  },
+  {
+    "name": "Lazza",
+    "id": "0jdNdfi4vAuVi7a6cPDFBM"
+  },
+  {
+    "name": "Geolier",
+    "id": "27LlKWxS3KXW7RRAxN5S8s"
+  },
+  {
+    "name": "AVA",
+    "id": "7zPS3i8YJBNeDcqXUHfCMr"
+  },
+  {
+    "name": "BLANCO",
+    "id": "1MRiIeZbc0cRuxOafDUCtH"
+  },
+  {
+    "name": "Pinguini Tattici Nucleari",
+    "id": "6RdcIWVKYYzNzjQRd3oyHS"
+  },
+  {
+    "name": "Annalisa",
+    "id": "0EqkKYDK9EkKY5N7zU3FPv"
+  },
+  {
+    "name": "AriBeatz",
+    "id": "6cNWiizYLCClZdnIvqU968"
+  },
+  {
+    "name": "Tananai",
+    "id": "35V1WomiedCJeGfupcPm7s"
+  },
+  {
+    "name": "Marco Mengoni",
+    "id": "3xGlLcG9CUrs5MvFkSLOS5"
+  },
+  {
+    "name": "Sixpm",
+    "id": "1DqxHZcNsyQouEIgARx6Zx"
+  },
+  {
+    "name": "Shiva",
+    "id": "2K5nCggbhSZ00YCYP5qkZS"
+  },
+  {
+    "name": "Rocco Hunt",
+    "id": "0L1f9i3L3fkMNENljDOsjG"
+  },
+  {
+    "name": "Mr.Rain",
+    "id": "59MLbXG0jLVwJup3KAd6m1"
+  },
+  {
+    "name": "Bresh",
+    "id": "7FeObngbQ0GY3SojNwKdKn"
+  },
+  {
+    "name": "thasup",
+    "id": "19i93sA0D7yS9dYoVNBqAA"
+  },
+  {
+    "name": "Tony Effe",
+    "id": "6CKch2otN4SPznHf9ms5JF"
+  },
+  {
+    "name": "Guè",
+    "id": "7F2utINZ6tSokSiZTQBE27"
+  },
+  {
+    "name": "Medy",
+    "id": "3lbFUmlaNMa9ZVSabLlkhn"
+  },
+  {
+    "name": "Angelina Mango",
+    "id": "1A6HBLulvBFzNtlMb7b08f"
+  },
+  {
+    "name": "Rose Villain",
+    "id": "2aya6KuqjXEhHBqYKsTPLs"
+  },
+  {
+    "name": "VillaBanks",
+    "id": "3ASAxVN1hNoYfoMcIkzZWL"
+  },
+  {
+    "name": "Madame",
+    "id": "1vgQksyJ0IVz8y9XerEOy3"
+  },
+  {
+    "name": "Loreen",
+    "id": "49aaHxvAJ0tCh0F15OnwIl"
+  },
+  {
+    "name": "David Kushner",
+    "id": "33NVpKoXjItPwUJTMZIOiY"
+  },
+  {
+    "name": "Miley Cyrus",
+    "id": "5YGY8feqx7naU7z4HrwZM6"
+  }
+]

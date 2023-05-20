@@ -14,13 +14,16 @@ sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 playlist_id = '37i9dQZEVXbIQnj7RRhdSX' #Top-50 italy
 results = sp.playlist(playlist_id, fields='tracks,next')
 tracks = results['tracks']
-artists = {}
+artists = []
 while tracks:
     for item in tracks['items']:
         track = item['track']
         artist = track['artists'][0]
-        if artist['name'] not in artists:
-            artists[artist['name']] =  artist['id']
+        if artist['name'] not in [x['name'] for x in artists]:
+            artists.append({
+                'name': artist['name'],
+                'id': artist['id']
+            })
             
     if tracks['next']:
         tracks = sp.next(tracks)
