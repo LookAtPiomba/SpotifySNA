@@ -41,3 +41,11 @@ class Artist:
     def getGenres(self) -> None:
         artist = sp.artist(self.id)
         self.genres = artist['genres']
+    
+    def jsonize(self, filename):
+        artist_json = {
+            'id': self.id,
+            'name': self.name,
+            'genres': len(self.genres),
+            'collaborators': list(self.collaborators.keys())
+        }
