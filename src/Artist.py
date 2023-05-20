@@ -1,7 +1,7 @@
 import itertools
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
-import os
+import os, json
 
 client_id = os.environ.get('CLIENT_ID')
 client_secret = os.environ.get('CLIENT_SECRET')
@@ -12,10 +12,10 @@ class Artist:
     def __init__(self, id:str, name:str) -> None:
         self.id = id
         self.name = name
-        self.collaborators = {}
-        self.genres = []
+        self.collaborators = self.getCollaborators()
+        self.genres = self.getGenres()
 
-    def __getTracks(self) -> list:
+    def getTracks(self) -> list:
         tracks = []
         albums = sp.artist_albums(self.id, album_type='album', country='it')
         singles = sp.artist_albums(self.id, album_type='single', country='it')
@@ -27,7 +27,7 @@ class Artist:
         
         return tracks
                 
-    def getCollaborators(self, collab_id:str, collab_name:str) -> dict:
+    def getCollaborators(self) -> dict:
         collaborators = {}
         tracks = self.getTracks()
         # Now access the list of tracks
@@ -35,17 +35,18 @@ class Artist:
             featured_artists = track['artists']
             for featured_artist in featured_artists:
                 if featured_artist['name'] not in featured_artists:
-                    self.collaborators[featured_artist['name']] =  featured_artist['id']
+                    collaborators[featured_artist['name']] =  featured_artist['id']
         return collaborators
 
     def getGenres(self) -> None:
         artist = sp.artist(self.id)
-        self.genres = artist['genres']
-    
-    def jsonize(self, filename):
+        return list(artist['genres'])
+
+    def jsonize(self):
         artist_json = {
             'id': self.id,
             'name': self.name,
             'genres': len(self.genres),
             'collaborators': list(self.collaborators.keys())
         }
+        return artist_json
