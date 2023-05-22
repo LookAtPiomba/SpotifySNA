@@ -22,20 +22,26 @@ class Artist:
         songs = albums['items'] + singles['items']
 
         for song in songs:
-            album_tracks = sp.album_tracks(song['id'])
-            tracks.extend(album_tracks['items'])
+            try:
+                album_tracks = sp.album_tracks(song['id'])
+                tracks.extend(album_tracks['items'])
+            except:
+                pass
         
         return tracks
                 
-    def getCollaborators(self) -> dict:
-        collaborators = {}
+    def getCollaborators(self) -> list[dict]:
+        collaborators = []
         tracks = self.getTracks()
         # Now access the list of tracks
         for track in tracks:
             featured_artists = track['artists']
             for featured_artist in featured_artists:
-                if featured_artist['name'] not in featured_artists:
-                    collaborators[featured_artist['name']] =  featured_artist['id']
+                if featured_artist['name'] not in [x['name'] for x in collaborators] and featured_artist['name'] != self.name:
+                    collaborators.append({
+                        'name': featured_artist['name'],
+                        'id': featured_artist['id']
+                    })
         return collaborators
 
     def getGenres(self) -> None:
@@ -46,7 +52,7 @@ class Artist:
         artist_json = {
             'id': self.id,
             'name': self.name,
-            'genres': len(self.genres),
-            'collaborators': list(self.collaborators.keys())
+            'genres': self.genres,
+            'collaborators': self.collaborators
         }
         return artist_json
