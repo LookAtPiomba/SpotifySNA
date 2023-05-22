@@ -1,0 +1,105 @@
+---
+title: "SNA"
+author: "Piombini Davide, Zilli Federico"
+date: "`r Sys.Date()`"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_knit$set(root.dir = '')
+```
+
+## Get data
+```{r}
+collabs <- read.csv('data/FilteredCollaboration.csv')
+#Remove id column
+collabs <- collabs[,-1]
+
+artists <- read.csv('data/PopularityAndGenres.csv')
+artists <- artists[,-1]
+```
+
+## Build Network
+
+```{r}
+network <- graph_from_data_frame(collabs, directed = FALSE, vertices = artists)
+```
+```{r}
+print(gsize(network))
+print(gorder(network))
+```
+
+## Print network
+```{r}
+# Customize vertex and edge attributes
+vertex_color <- "red"  # Color of vertices
+vertex_size <- 5      # Size of vertices
+edge_width <- 1         # Width of edges
+
+png(filename="Network.png")
+plot(network,
+     vertex.color = vertex_color,
+     vertex.size = vertex_size,
+     vertex.label = NA,
+     edge.width = edge_width)
+
+dev.off()
+```
+
+## Calculate Network values
+```{r}
+centrality <- degree(network, v = V(network))
+artists$num_collab <- centrality[match(artists$artist, V(network)$name)]
+```
+
+```{r}
+cns <- closeness(network, v = V(network))
+artists$closeness <- cns[match(artists$artist, V(network)$name)]
+```
+
+```{r}
+btw <- betweenness(network, v = V(network))
+artists$betweenness <- btw[match(artists$artist, V(network)$name)]
+```
+
+## Models
+
+```{r}
+model1 <- lm(popularity ~ num_collab, data=artists)
+
+# Print model summary
+summary(model1)
+```
+```{r}
+#Create scatterplot with regression line
+ggplot(artists, aes(x=num_collab, y=popularity)) +
+geom_point() +
+geom_smooth(method="lm", se=FALSE)
+```
+
+```{r}
+model2 <- lm(popularity ~ num_genres, data=artists)
+
+# Print model summary
+summary(model2)
+```
+```{r}
+#Create scatterplot with regression line
+ggplot(artists, aes(x=num_genres, y=popularity)) +
+geom_point() +
+geom_smooth(method="lm", se=FALSE)
+```
+
+```{r}
+model3 <- lm(popularity ~ artists$betweenness, data=artists)
+
+# Print model summary
+summary(model3)
+```
+```{r}
+#Create scatterplot with regression line
+ggplot(artists, aes(x=betweenness, y=popularity)) +
+geom_point() +
+geom_smooth(method="lm", se=FALSE)
+```
