@@ -30,5 +30,5 @@ while tracks:
     else:
         tracks = None
 
-with open('data/choosenArtists.json', 'w') as f:
+with open('data/playlistArtists.json', 'w') as f:
     json.dump(artists, f)
